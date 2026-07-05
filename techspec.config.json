@@ -1,0 +1,19 @@
+{
+  "provider": "anthropic",
+  "models": {
+    "anthropic": "claude-sonnet-4-6",
+    "openai": "gpt-4.1",
+    "gemini": "gemini-2.5-pro"
+  },
+  "watchPath": "iflows/**/*.zip",
+  "outputDir": "docs/tech-specs",
+  "documentMetadata": {
+    "domain": "XXXX",
+    "interfaceId": "I<xxx>",
+    "level3Id": "",
+    "author": "",
+    "sapVersion": "",
+    "interfacePattern": "",
+    "companyName": ""
+  }
+}
