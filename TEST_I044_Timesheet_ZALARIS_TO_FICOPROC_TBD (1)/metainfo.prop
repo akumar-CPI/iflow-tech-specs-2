@@ -1,0 +1,5 @@
+#Store metainfo properties
+#Sun Jun 21 17:25:02 UTC 2026
+description=Interface to replicate the Timesheets from ZALARIS to FiCoProc
+source=ZALARIS
+target=FICOPROC
