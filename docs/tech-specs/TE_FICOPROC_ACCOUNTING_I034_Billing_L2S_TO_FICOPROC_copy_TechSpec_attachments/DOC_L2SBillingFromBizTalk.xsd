@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="billing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ventures">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="venture">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ventureName" type="xs:string"/>
+                    <xs:element name="ventureNo" type="xs:unsignedByte"/>
+                    <xs:element name="ventureCode" type="xs:string"/>
+                    <xs:element name="vendorCode" type="xs:string"/>
+                    <xs:element name="operatorOrgNo" type="xs:unsignedInt"/>
+                    <xs:element name="operatorName" type="xs:string"/>
+                    <xs:element name="billingNo" type="xs:string"/>
+                    <xs:element name="year" type="xs:unsignedShort"/>
+                    <xs:element name="month" type="xs:unsignedByte"/>
+                    <xs:element name="currencies">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="localCurrency" type="xs:string"/>
+                          <xs:element name="exchangeCurrencies">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="exchangeCurrency">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="currency" type="xs:string"/>
+                                      <xs:element name="rate" type="xs:decimal"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="equityGroups">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="equityGroup">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="equityGroupName" type="xs:string"/>
+                                <xs:element name="currencies">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="localCurrency" type="xs:string"/>
+                                      <xs:element name="exchangeCurrencies">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" minOccurs="0" name="exchangeCurrency">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="currency" type="xs:string"/>
+                                                  <xs:element name="rate" type="xs:decimal"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="partners">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="partner">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="partnerOrgNo" type="xs:unsignedInt"/>
+                                            <xs:element name="partnerName" type="xs:string"/>
+                                            <xs:element name="partnerAddress" type="xs:string"/>
+                                            <xs:element name="equityShare" type="xs:decimal"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="accountStatements">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="accountStatement">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="fundingCurrency" type="xs:string"/>
+                                            <xs:element name="localCurrency" type="xs:string"/>
+                                            <xs:element name="expenditures">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="capEx">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="operEx">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="finEx">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="revenue">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="workingCapital">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="accPayableLT">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="accPayableST">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="accReceivableLT">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="accReceivableST">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="accruals">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="prepExpLT">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="prepExpST">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="sumInv">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="stkCapSpareParts">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="stkDrillWellEqm">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="stkSpareParts">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="period" type="xs:decimal"/>
+                                                        <xs:element name="ytd" type="xs:decimal"/>
+                                                        <xs:element name="itd" type="xs:decimal"/>
+                                                        <xs:element name="account" type="xs:string"/>
+                                                        <xs:element name="wbs" type="xs:string"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="distributedPayments">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="partners">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element maxOccurs="unbounded" name="partner">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="name" type="xs:string"/>
+                                                              <xs:element name="period" type="xs:decimal"/>
+                                                              <xs:element name="ytd" type="xs:decimal"/>
+                                                              <xs:element name="itd" type="xs:decimal"/>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element minOccurs="0" name="cashReceived">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="partners">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element maxOccurs="unbounded" name="partner">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="name" type="xs:string"/>
+                                                              <xs:element name="period" type="xs:decimal"/>
+                                                              <xs:element name="ytd" type="xs:decimal"/>
+                                                              <xs:element name="itd" type="xs:decimal"/>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element minOccurs="0" name="overUnderCall">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="partners">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element maxOccurs="unbounded" name="partner">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="name" type="xs:string"/>
+                                                              <xs:element name="period" type="xs:decimal"/>
+                                                              <xs:element name="ytd" type="xs:decimal"/>
+                                                              <xs:element name="itd" type="xs:decimal"/>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="accountStatementLCAdjNOK">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="expenditures">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="capEx">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="operEx">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="finEx">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="revenue">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="workingCapital">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="accPayableLT">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="accPayableST">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="accReceivableLT">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="accReceivableST">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="accruals">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="prepExpLT">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="prepExpST">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="sumInv">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="stkCapSpareParts">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="stkDrillWellEqm">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="stkSpareParts">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="itd" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="consolidatedReport">
+                                  <xs:complexType>
+                                    <xs:sequence minOccurs="0">
+                                      <xs:element name="localCurrency" type="xs:string"/>
+                                      <xs:element name="jibEntries">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="jibEntry">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="post" type="xs:string"/>
+                                                  <xs:element name="projectName" type="xs:string"/>
+                                                  <xs:element name="projectNumber" type="xs:string"/>
+                                                  <xs:element name="period" type="xs:decimal"/>
+                                                  <xs:element name="ytd" type="xs:decimal"/>
+                                                  <xs:element name="budget_period" type="xs:decimal"/>
+                                                  <xs:element name="budget_ytd" type="xs:decimal"/>
+                                                  <xs:element name="budget_fullyear" type="xs:decimal"/>
+                                                  <xs:element name="tangible_period" type="xs:decimal"/>
+                                                  <xs:element name="intangible_period" type="xs:decimal"/>
+                                                  <xs:element name="account" type="xs:string"/>
+                                                  <xs:element name="wbs" type="xs:string"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="periodSum" type="xs:decimal"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
